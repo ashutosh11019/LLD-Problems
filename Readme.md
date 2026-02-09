@@ -14,7 +14,8 @@ The repository is organized by problem statements. Each folder contains:
 | # | Problem Name | Description | Solution Link |
 |---|--------------|-------------|---------------|
 | 1 | **Parking Lot** | Multi-level parking system with vehicle types and ticketing. | [Link](./Parking_Lot) |
-| 2 | *More coming soon...* | | |
+| 2 | **Tic-Tac-Toe** | Console-based 2-player game with win/draw logic. | [Link](./Tic_Tac_Toe) |
+| 3 | *More coming soon...* | | |
 
 ## 🛠️ How to Run
 
