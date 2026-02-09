@@ -83,11 +83,21 @@ classDiagram
         +freeSpot(Ticket ticket) void
     }
 
+    class FeeStrategy {
+        <<interface>>
+        +calculateFee(Ticket ticket) double
+    }
+
+    class HourlyFeeStrategy {
+        +calculateFee(Ticket ticket) double
+    }
+
     ParkingLot "1" *-- "*" Level
     Level "1" *-- "*" ParkingSpot
     ParkingSpot "1" o-- "0..1" Vehicle
     Ticket --> Vehicle
     Ticket --> ParkingSpot
+    HourlyFeeStrategy ..|> FeeStrategy
 ```
 
 ## 4. Entity Descriptions
@@ -149,7 +159,16 @@ Based on the actual implementation, here is the detailed breakdown of the core e
 *   **Core Methods**:
     *   `markExit()`: Sets the `exitTime` to current time.
 
-## 5. Potential Extensions
-*   **PaymentIntegration**: Add `Payment` class and `calculateFee()` logic based on duration between `entryTime` and `exitTime`.
-*   **ExitGate / EntryGate**: Physical checkpoints that handle the `parkVehicle` and `freeSpot` triggers.
-*   **ParkingStrategies**: Strategy Pattern to handle different parking logic (e.g., `NearestToElevator`, `FillFirstLevelFirst`).
+### 6. Fee Calculation Strategies
+**Responsibility**: Encapsulate the logic for calculating parking fees.
+*   **FeeStrategy (Interface)**:
+    *   `calculateFee(Ticket ticket)`: Returns the fee amount based on ticket details (entry/exit time, vehicle type).
+*   **HourlyFeeStrategy (Class)**:
+    *   Implements `FeeStrategy`.
+    *   Calculates fee based on the duration (in hours) and vehicle type.
+
+## 7. Potential Extensions
+*   **Payment Processing**: Implement a `Payment` entity and `PaymentMethod` interface (CreditCard, UPI, Cash) to handle transactions, separate from fee calculation.
+*   **Gate Management**: Introduce `EntryGate` and `ExitGate` classes to manage the physical entry/exit flows, including ticket generation and validation.
+*   **Spot Allocation Strategy**: Implement a Strategy pattern for finding spots (e.g., `NearestToEntrance`, `FillGroundFloorFirst`) to replace the current simple linear search.
+*   **Concurrency Handling**: Ensure the system is thread-safe for concurrent vehicle entries and exits using synchronization or locks.

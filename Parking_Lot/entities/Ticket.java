@@ -30,4 +30,12 @@ public class Ticket {
     public Vehicle getVehicle() {
         return vehicle;
     }
+
+    public LocalDateTime getEntryTime() {
+        return entryTime;
+    }
+
+    public LocalDateTime getExitTime() {
+        return exitTime;
+    }
 }

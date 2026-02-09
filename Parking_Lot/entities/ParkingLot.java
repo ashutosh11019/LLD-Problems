@@ -2,8 +2,11 @@ package entities;
 
 import java.util.List;
 
+import entities.HourlyFeeStrategy;
+
 public class ParkingLot{
 	private List<Level> levels;
+	private FeeStrategy feeStrategy;
 
 	public ParkingLot(List<Level> levels){
 		this.levels = levels;
@@ -39,6 +42,9 @@ public class ParkingLot{
 
 	public void freeSpot(Ticket ticket) {
         ParkingSpot spot = ticket.getParkingSpot();
+		ticket.markExit();
+		double fee = feeStrategy.calculateFee(ticket);
+		System.out.println(fee);
         spot.removeVehicle();
     }
 }
