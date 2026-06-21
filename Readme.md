@@ -17,7 +17,8 @@ The repository is organized by problem statements. Each folder contains:
 | 2 | **Tic-Tac-Toe** | Console-based 2-player game with win/draw logic. | [Link](./Tic_Tac_Toe) |
 | 3 | **ATM Machine** | ATM System design handling authentication, transactions, and cash management. | [Link](./ATM_Machine) |
 | 4 | **Splitwise** | Expense sharing application with various split strategies. | [Link](./Splitwise) |
-| 5 | *More coming soon...* | | |
+| 5 | **Elevator System** | Multi-elevator building system optimized via the SCAN algorithm. | [Link](./Elevator) |
+| 6 | *More coming soon...* | | |
 
 ## 🛠️ How to Run
 
