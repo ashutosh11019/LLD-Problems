@@ -18,7 +18,8 @@ The repository is organized by problem statements. Each folder contains:
 | 3 | **ATM Machine** | ATM System design handling authentication, transactions, and cash management. | [Link](./ATM_Machine) |
 | 4 | **Splitwise** | Expense sharing application with various split strategies. | [Link](./Splitwise) |
 | 5 | **Elevator System** | Multi-elevator building system optimized via the SCAN algorithm. | [Link](./Elevator) |
-| 6 | *More coming soon...* | | |
+| 6 | **Airline Ticket Management System** | Flight search, seat holds with expiry, booking, and cancellation. | [Link](./Airline_Ticket_Management_System) |
+| 7 | *More coming soon...* | | |
 
 ## 🛠️ How to Run
 
